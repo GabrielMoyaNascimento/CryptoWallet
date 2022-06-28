@@ -34,7 +34,7 @@ public class ServicoUsuario {
 		return repositorioUsuario.findAll(pageable);
 	}
 	
-	public Page<Usuario> findAllByCpf(String cpf, Pageable page){
+	public Page<Usuario> findByCpf(String cpf, Pageable page){
 		Page<Usuario>usuarios = repositorioUsuario.findByCpf(cpf,page);
 		return usuarios;
 	}
@@ -46,8 +46,7 @@ public class ServicoUsuario {
 				throw new ResourceAlreadyExistsException("Usuario com id: "+ usuario.getId()+"já existe.");
 			}
 			return repositorioUsuario.save(usuario);
-		}
-		else {
+		} else {
 			BadResourceException exc =  new BadResourceException("Erro ao salvar usuário");
 			exc.addErrorMessages("Usuário está vazio ou é nulo");
 			throw exc;
@@ -60,8 +59,7 @@ public class ServicoUsuario {
 				throw new ResourceNotFoundException("Usuário não encontrado com o id: "+usuario.getId());
 			}
 			repositorioUsuario.save(usuario);
-		}
-		else {
+		}else {
 			BadResourceException  exc = new BadResourceException ("Falha ao salvar usuário");
 			exc.addErrorMessages("Usuário está nulo ou em branco");
 			throw exc;
