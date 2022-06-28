@@ -44,7 +44,7 @@ public class ControleUsuario {
 		if (StringUtils.isEmpty(cpf)) {
 			return ResponseEntity.ok(new UsuarioDTO().converterListaUsuarioDTO(servicoUsuario.findAll(pageable)));
 		} else {
-			return ResponseEntity.ok(new UsuarioDTO().converterListaUsuarioDTO(servicoUsuario.findAllByCpf(cpf, pageable)));
+			return ResponseEntity.ok(new UsuarioDTO().converterListaUsuarioDTO(servicoUsuario.findByCpf(cpf, pageable)));
 		}
 	}
 	
