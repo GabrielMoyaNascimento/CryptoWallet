@@ -35,7 +35,7 @@
 }
   
 .button {
-    background-color: #37387a;
+    background-color: #3773e0;
     border: none;
     color: white;
     padding: 10px 25px;
@@ -48,7 +48,7 @@
 }
 
 .button:hover {
-    background-color: #22234b;
+    background-color: #224c9b;
 }
   
 @media only screen and (max-width: 600px) {
