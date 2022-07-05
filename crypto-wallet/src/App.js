@@ -1,86 +1,28 @@
-import React, { useState } from "react";
-// import ReactDOM from "react-dom";
+import React from 'react'
+import {
+  BrowserRouter as Router, 
+  Switch,
+  Route
+} from 'react-router-dom'
+import Layout from './layout/Layout'
+import Home from './components/pages/Home'
+import AboutUs from './components/pages/AboutUs'
+import ContactUs from './components/pages/ContactUs'
 
-import "./App.css";
+import './App.css';
 
 function App() {
-  // React States
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  // User Login info
-  const database = [
-    {
-      username: "user1",
-      password: "pass1"
-    },
-    {
-      username: "user2",
-      password: "pass2"
-    }
-  ];
-
-  const errors = {
-    uname: "Usuário não encontrado",
-    pass: "Senha incorreta"
-  };
-
-  const handleSubmit = (event) => {
-    //Prevent page reload
-    event.preventDefault();
-
-    var { uname, pass } = document.forms[0];
-
-    // Find user login info
-    const userData = database.find((user) => user.username === uname.value);
-
-    // Compare user info
-    if (userData) {
-      if (userData.password !== pass.value) {
-        // Invalid password
-        setErrorMessages({ name: "pass", message: errors.pass });
-      } else {
-        setIsSubmitted(true);
-      }
-    } else {
-      // Username not found
-      setErrorMessages({ name: "uname", message: errors.uname });
-    }
-  };
-
-  // Generate JSX code for error message
-  const renderErrorMessage = (name) =>
-    name === errorMessages.name && (
-      <div className="error">{errorMessages.message}</div>
-    );
-
-  // JSX code for login form
-  const renderForm = (
-    <div className="form">
-      <form onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label>E-mail </label>
-          <input type="text" name="uname" required />
-          {renderErrorMessage("uname")}
-        </div>
-        <div className="input-container">
-          <label>Senha </label>
-          <input type="password" name="pass" required />
-          {renderErrorMessage("pass")}
-        </div>
-        <div className="button-container">
-          <input type="submit" />
-        </div>
-      </form>
-    </div>
-  );
-
   return (
-    <div className="app">
-      <div className="login-form">
-        <div className="title">Login</div>
-        {isSubmitted ? <div>Usuário Logado com Sucesso</div> : renderForm}
-      </div>
+    <div className="body-wrap">
+      <Router>
+        <Layout>
+          <Switch>
+            <Route path={'/AboutUs'} component={AboutUs}></Route>
+            <Route path={'/ContactUs'} component={ContactUs}></Route>
+            <Route path={'/'} component={Home}></Route>
+          </Switch>
+        </Layout>
+      </Router>
     </div>
   );
 }
