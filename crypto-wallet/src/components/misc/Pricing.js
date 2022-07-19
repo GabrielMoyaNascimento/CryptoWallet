@@ -12,7 +12,7 @@ const Home = () => {
                     <li>12 consultation sessions</li>
                     <li>Unlimited Consultation</li>
                     <li>Unlimited Consultation</li>
-                    <li className="grey"><button className="button">Login/Comprar</button></li>
+                    <li className="grey"><button className="button"><a href="/Login">Login/Comprar</a></button></li>
                 </ul>
                 </div>
 
@@ -23,7 +23,7 @@ const Home = () => {
                     <li>Unlimited Consultation</li>
                     <li>Unlimited Consultation</li>
                     <li>Unlimited Consultation</li>
-                    <li className="grey"><button className="button">Login/Comprar</button></li>
+                    <li className="grey"><button className="button"><a href="/Login">Login/Comprar</a></button></li>
                 </ul>
                 </div>
 
@@ -34,7 +34,7 @@ const Home = () => {
                     <li>Unlimited Consultation</li>
                     <li>Unlimited Consultation</li>
                     <li>Unlimited Consultation</li>
-                    <li className="grey"><button className="button">Login/Comprar</button></li>
+                    <li className="grey"><button className="button"><a href="/Login">Login/Comprar</a></button></li>
                 </ul>
             </div>
             </section>
