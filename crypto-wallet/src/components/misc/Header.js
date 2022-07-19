@@ -9,7 +9,7 @@ const Header = () => {
                 <div className="bg-container">
                     <h1>Seja Bem Vindo!</h1>
                     <h2>Uma maneira diferente de lidar com seus cryptoativos</h2>
-                    <Link to="/ContactUs">Cadastrar-se</Link>
+                    <Link to="/Login">Cadastre-se</Link>
                 </div>
             </header>
         </React.Fragment>

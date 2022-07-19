@@ -1,7 +1,7 @@
 header{
     color: white;
     background: #37387a;
-    background-image: url('../../images/space.jpg');
+    background-image: url('../../images/fundo.jpg');
     min-height: 50vh;
     padding-top: 20vh;
     text-align: center;
@@ -19,8 +19,8 @@ header h1{
 }
 
 header h2{
-    font-weight: 300;
-    font-size: 1.5rem;
+    font-weight: 400;
+    font-size: 2.5rem;
     margin: 0 0 1rem;
 }
 
