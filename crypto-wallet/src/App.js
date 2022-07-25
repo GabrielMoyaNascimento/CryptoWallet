@@ -6,9 +6,9 @@ import {
 } from 'react-router-dom'
 import Layout from './layout/Layout'
 import Home from './components/pages/Home'
-import AboutUs from './components/pages/AboutUs'
-import ContactUs from './components/pages/ContactUs'
+import SobreNos from './components/pages/SobreNos'
 import Login from './components/pages/Login'
+import Dashboard from './components/pages/Dashboard'
 
 import './App.css';
 
@@ -18,10 +18,10 @@ function App() {
       <Router>
         <Layout>
           <Switch>
-            <Route path={'/AboutUs'} component={AboutUs}></Route>
-            <Route path={'/ContactUs'} component={ContactUs}></Route>
-            <Route path={'/Login'} component={Login}></Route>
+            <Route path={'/aboutUs'} component={SobreNos}></Route>
+            <Route path={'/login'} component={Login}></Route>
             <Route path={'/'} component={Home}></Route>
+            <Route path={'/dashboard'} component={Dashboard}></Route>
           </Switch>
         </Layout>
       </Router>

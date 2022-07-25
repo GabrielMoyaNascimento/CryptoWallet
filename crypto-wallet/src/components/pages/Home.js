@@ -1,23 +1,13 @@
 import React from 'react'
-
-import Testimonials from '../misc/Testimonials'
-import Pricing from '../misc/Pricing'
+import Precos from '../misc/Precos'
 import Header from '../misc/Header'
 
 const Home = () => {
     return (
         <React.Fragment>
             <Header />
-            <Pricing />
-            <Testimonials />
+            <Precos />
         </React.Fragment>
     )
 }
-
 export default Home;
-
-/*
-            <Pricing />
-            <Testimonials />
-
-*/

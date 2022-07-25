@@ -4,9 +4,7 @@ const Login = () => {
     return (
         <React.Fragment>
             <section className="content-container">
-                <div className="textArea">
-                    <h2>Contact Us</h2>
-                </div>
+                
                 <div className="block">
                     <div className="row">
                         <div className="col-left">
