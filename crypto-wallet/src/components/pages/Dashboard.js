@@ -1,5 +1,6 @@
 import React from 'react'
-import SideBar from '../navigations/SideBar'
+import Layout from '../../layout/dashboard/Layout';
+import SideBar from '../navigations/SideBar';
 
 const Dashboard = () => {
     return (

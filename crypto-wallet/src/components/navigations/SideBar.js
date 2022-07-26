@@ -1,48 +1,19 @@
-import React from 'react';
+import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import 'react-pro-sidebar/dist/css/styles.css';
 
-import {Navigation} from 'react-minimal-side-navigation';
-import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
 
-function SideBar() {
-    return (
-      <>
-        <Navigation
-            activeItemId="/management/members"
-            onSelect={({itemId}) => {
-            }}
-            items={[
-              {
-                title: 'Dashboard',
-                itemId: '/dashboard',
-              },
-              {
-                title: 'Management',
-                itemId: '/management',
-                subNav: [
-                  {
-                    title: 'Projects',
-                    itemId: '/management/projects',
-                  },
-                  {
-                    title: 'Members',
-                    itemId: '/management/members',
-                  },
-                ],
-              },
-              {
-                title: 'Another Item',
-                itemId: '/another',
-                subNav: [
-                  {
-                    title: 'Teams',
-                    itemId: '/management/teams',
-                  },
-                ],
-              },
-            ]}
-          />
-      </>
-    );
-}
+const SideBar = () => {
+  return (
+      <ProSidebar>
+        <Menu iconShape="square">
+          <MenuItem >Dashboard</MenuItem>
+          <SubMenu title="Components">
+            <MenuItem>Component 1</MenuItem>
+            <MenuItem>Component 2</MenuItem>
+          </SubMenu>
+        </Menu>
+      </ProSidebar>
+    )
+  }
 
 export default SideBar;

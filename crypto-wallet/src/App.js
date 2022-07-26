@@ -4,7 +4,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
-import Layout from './layout/Layout'
+import LayoutIndex from './layout/index/Layout'
 import Home from './components/pages/Home'
 import SobreNos from './components/pages/SobreNos'
 import Login from './components/pages/Login'
@@ -16,14 +16,14 @@ function App() {
   return (
     <div className="body-wrap">
       <Router>
-        <Layout>
+        <LayoutIndex>
           <Switch>
             <Route path={'/aboutUs'} component={SobreNos}></Route>
             <Route path={'/login'} component={Login}></Route>
-            <Route path={'/'} component={Home}></Route>
             <Route path={'/dashboard'} component={Dashboard}></Route>
+            <Route path={'/'} component={Home}></Route>
           </Switch>
-        </Layout>
+        </LayoutIndex>
       </Router>
     </div>
   );
