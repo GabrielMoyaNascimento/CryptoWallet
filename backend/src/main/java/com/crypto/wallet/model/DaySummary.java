@@ -1,7 +1,5 @@
 package com.crypto.wallet.model;
 
-import java.math.BigDecimal;
-
 import lombok.Data;
 
 @Data
