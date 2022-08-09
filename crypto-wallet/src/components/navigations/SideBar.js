@@ -35,6 +35,7 @@ const SideBar = () => {
             <MenuItem className='menuitem'>Sair</MenuItem>
           </SubMenu>
         </Menu>
+        
       </ProSidebar>
     )
   }
