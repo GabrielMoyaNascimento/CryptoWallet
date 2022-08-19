@@ -1,8 +1,11 @@
 import React from 'react'
+import MenuBar from '../navigations/MenuBar'
+import Footer from '../navigations/Footer'
 
 const SobreNos = () => {
     return (
         <React.Fragment>
+            <MenuBar/>
             <section className="content-container">
                 <div className="textArea"> 
                     <h2>Sobre-nós</h2>
@@ -47,6 +50,7 @@ const SobreNos = () => {
                     </p>
                 </div>
             </section>
+            <Footer/>
         </React.Fragment>
     )
 }

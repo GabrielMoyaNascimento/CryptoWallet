@@ -1,11 +1,13 @@
 import React from 'react'
-import Layout from '../../layout/dashboard/Layout';
-import SideBar from '../navigations/SideBar';
+import MenuBarLogged from '../navigations/MenuBarLogged';
+import Footer from '../navigations/Footer'
+
 
 const Dashboard = () => {
     return (
         <React.Fragment>
-            <SideBar/>
+            <MenuBarLogged/>
+            <Footer/>
         </React.Fragment>
     )
 }
