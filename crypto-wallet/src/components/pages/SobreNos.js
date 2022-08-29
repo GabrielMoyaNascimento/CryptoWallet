@@ -1,12 +1,14 @@
 import React from 'react'
 import MenuBar from '../navigations/MenuBar'
 import Footer from '../navigations/Footer'
+import './SobreNos.css'
+import { Container } from '@material-ui/core'
 
 const SobreNos = () => {
     return (
         <React.Fragment>
             <MenuBar/>
-            <section className="content-container">
+            <container className="content-container">
                 <div className="textArea"> 
                     <h2>Sobre-nós</h2>
                     <p>
@@ -49,7 +51,7 @@ const SobreNos = () => {
                         Dessa forma desejamos auxiliar um controle de investimentos real-time mesmo para usuários menos experientes, tornando mais fácil a compreensão do funcionamento desse mercado relativamente novo, pois o mercado carece de opções de sistemas para simulação/gestão de informações desse tipo.
                     </p>
                 </div>
-            </section>
+            </container>
             <Footer/>
         </React.Fragment>
     )
