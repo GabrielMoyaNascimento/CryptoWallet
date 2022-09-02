@@ -23,7 +23,7 @@
 
 <<<<<<<<<<<<<<<<<<<Para instalação e deploy do Back-End>>>>>>>>>>>>>>>>>>>>>>>>>
 
--Acesse dentro da pasta do Front-End entitulada backend
+-Acesse dentro da pasta do Back-End entitulada backend
 
 -Nesse momento, acesse a linha de comando e digite o código " mvn clean install " 
 
