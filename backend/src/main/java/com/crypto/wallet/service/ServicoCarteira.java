@@ -6,10 +6,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import com.crypto.wallet.entity.Carteira;
 import com.crypto.wallet.exception.BadResourceException;
 import com.crypto.wallet.exception.ResourceAlreadyExistsException;
 import com.crypto.wallet.exception.ResourceNotFoundException;
-import com.crypto.wallet.model.Carteira;
 import com.crypto.wallet.repository.RepositorioCarteira;
 
 @Service

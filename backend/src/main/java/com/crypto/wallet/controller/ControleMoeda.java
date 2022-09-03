@@ -21,10 +21,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.crypto.wallet.entity.Moeda;
 import com.crypto.wallet.exception.BadResourceException;
 import com.crypto.wallet.exception.ResourceAlreadyExistsException;
 import com.crypto.wallet.exception.ResourceNotFoundException;
-import com.crypto.wallet.model.Moeda;
 import com.crypto.wallet.service.ServicoMoeda;
 
 @RestController

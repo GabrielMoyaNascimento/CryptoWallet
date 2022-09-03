@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import com.crypto.wallet.entity.Moeda;
 import com.crypto.wallet.exception.BadResourceException;
 import com.crypto.wallet.exception.ResourceAlreadyExistsException;
 import com.crypto.wallet.exception.ResourceNotFoundException;
-import com.crypto.wallet.model.Moeda;
 import com.crypto.wallet.repository.RepositorioMoeda;
 
 

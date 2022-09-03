@@ -3,7 +3,7 @@ package com.crypto.wallet.service;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.crypto.wallet.model.Ticker;
+import com.crypto.wallet.entity.Ticker;
 
 @Service
 public class ServicoOrderbook {

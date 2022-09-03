@@ -5,16 +5,19 @@ import java.util.Date;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
 
-import com.crypto.wallet.model.Usuario;
+import com.crypto.wallet.entity.Usuario;
 
 import lombok.Data;
 
 @Data
 public class UsuarioDTO {
 	private String nome;
-	private String email;
+	private String senha;
 	private String cpf;
-	private String observacao;
+	private String email;
+	private String telefone;
+	private boolean admin;
+	private boolean ativo;
 	private Date dataCadastro;
 	
 	public UsuarioDTO converter(Usuario usuario) {

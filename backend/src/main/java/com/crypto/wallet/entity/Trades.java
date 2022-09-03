@@ -1,4 +1,4 @@
-package com.crypto.wallet.model;
+package com.crypto.wallet.entity;
 
 import java.util.List;
 
