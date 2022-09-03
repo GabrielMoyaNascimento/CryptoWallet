@@ -1,4 +1,4 @@
-package com.crypto.wallet.cryptoWallet;
+package com.crypto.wallet;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +11,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    	http.authorizeRequests().antMatchers("/**").permitAll().and().csrf().disable();
+    	http.authorizeRequests().antMatchers("http://localhost:8080/**").permitAll().and().csrf().disable();
         return http.build();
     }
 }

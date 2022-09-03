@@ -1,7 +1,6 @@
-package com.crypto.wallet.model;
+package com.crypto.wallet.entity;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,25 +13,21 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import lombok.Getter;
 import lombok.Setter;
-
 @Entity
-@Table(name="usuario")
+@Table(name = "moeda")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Getter
 @Setter
-public class Usuario {
+public class Moeda {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private String nome;
-	private String senha;
-	private String cpf;
-	private String email;
-	private String telefone;
-	private boolean admin;
+	private double valor;
+	private String alias;
 	private boolean ativo;
 	private Timestamp dataCadastro;
-	
+
 	
 }

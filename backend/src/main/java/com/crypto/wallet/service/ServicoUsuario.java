@@ -7,7 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import com.crypto.wallet.model.Usuario;
+import com.crypto.wallet.entity.Usuario;
 import com.crypto.wallet.exception.BadResourceException;
 import com.crypto.wallet.exception.ResourceAlreadyExistsException;
 import com.crypto.wallet.exception.ResourceNotFoundException;
