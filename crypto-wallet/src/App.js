@@ -10,7 +10,7 @@ import Login from './components/pages/Login'
 import Dashboard from './components/pages/Dashboard'
 
 import './App.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="body-wrap">
