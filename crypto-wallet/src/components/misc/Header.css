@@ -18,11 +18,17 @@ header h1{
     margin: 0 0 1rem;
 }
 
+.center{
+    text-align: center;
+    width: 100%;
+}
+
 header h2{
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 0 0 1rem;
 }
+
 
 header a{
     color: #ffff;

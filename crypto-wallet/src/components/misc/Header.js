@@ -8,7 +8,7 @@ const Header = () => {
             <header className="bg-image">
                 <div className="bg-container">
                     <h1>Seja Bem Vindo!</h1>
-                    <h2>Uma maneira diferente de lidar com seus cryptoativos</h2>
+                    <h2 className='center'>Uma maneira diferente de lidar com seus cryptoativos</h2>
                     <Link to="/Login">Cadastre-se</Link>
                 </div>
             </header>
