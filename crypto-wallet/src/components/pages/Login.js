@@ -6,58 +6,34 @@ const Login = () => {
     return (
         <React.Fragment>
             <MenuBar />
-            <br /><br /><br /><br />
-            <div className="registro">
-                <form id="register" action="">
-                    <h1>Cadastre-se:</h1>
-                    <p>Nome:</p>
-                    <div className='col-sm-6'>
-                        <input className='text' placeholder="Escreva seu nome" type="text" tabIndex="1" required autoFocus />
-                    </div>
-
-                    <p>E-mail:</p>
-                    <input placeholder="Endereço de e-mail" type="email" tabIndex="2" required />
-
-
-                    <p>Telefone:</p>
-                    <input placeholder="Número de telefone " type="tel" tabIndex="3" required />
-
-                    <div className='col-sm-3'>
-
+            <div style={{ padding: "10%" }} className="col">
+                <div style={{ padding: "0 25% 0 25%" }} className='row'>
+                    <div className="col-6 px-5" >
+                        <h1>Cadastre-se:</h1>
+                        <p>Nome:</p>
+                        <input className='form-control' placeholder="Escreva seu nome" type="text" tabIndex="1" required autoFocus />
+                        <p>E-mail:</p>
+                        <input className='form-control' placeholder="Endereço de e-mail" type="email" tabIndex="2" required />
+                        <p>Telefone:</p>
+                        <input className='form-control' placeholder="Número de telefone " type="tel" tabIndex="3" required />
                         <p>CPF:</p>
-                        <input placeholder="000.000.000-00" type="text" tabIndex="4" required autoFocus />
-
-
+                        <input className='form-control' placeholder="000.000.000-00" type="text" tabIndex="4" required autoFocus />
                         <p>Senha:</p>
-                        <input placeholder="Senha" type="text" tabIndex="5" required />
-
-
+                        <input className='form-control' placeholder="Senha" type="text" tabIndex="5" required />
                         <br></br>
-                        <button className='btn btn-primary' name="submit" type="submit" id="contact-submit" data-submit="...Sending">Cadastrar</button>
-
+                        <button className='btn btn-primary form-control' name="submit" type="submit" id="contact-submit" data-submit="...Sending">Cadastrar</button>
                     </div>
-                </form>
-            </div>
-
-            <form className="login" action="">
-                <div className='row'>
-                    <div className='col'>
+                    <div className='col-6 px-5'>
                         <h1 id="text-login">Login:</h1>
-
                         <p id="text-forms">E-mail:</p>
-                        <input placeholder="Endereço de e-mail" type="text" tabIndex="1" required autoFocus />
-
-
+                        <input className='form-control' placeholder="Endereço de e-mail" type="text" tabIndex="1" required autoFocus />
                         <p id="text-forms">Senha:</p>
-                        <input placeholder="Senha" type="email" tabIndex="2" required />
-
-
+                        <input className='form-control' placeholder="Senha" type="email" tabIndex="2" required />
                         <br></br>
-                        <button className='btn btn-primary' name="submit" type="submit" id="contact-submit" data-submit="...Sending">Login</button>
+                        <button className='btn btn-primary form-control' name="submit" type="submit" id="contact-submit" data-submit="...Sending">Login</button>
                     </div>
                 </div>
-            </form>
-            <br/>
+            </div>
             <Footer />
         </React.Fragment>
     )

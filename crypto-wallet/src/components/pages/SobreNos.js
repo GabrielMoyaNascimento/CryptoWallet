@@ -9,7 +9,7 @@ const SobreNos = () => {
         <React.Fragment>
             <MenuBar/>
             <container className="content-container">
-                <div className="textArea"> 
+                <div className="textArea" style={{padding:"5%"}}> 
                     <h2>Sobre-nós</h2>
                     <p>
                         Desde o surgimento das primeiras formas de troca de valores, o avanço da
