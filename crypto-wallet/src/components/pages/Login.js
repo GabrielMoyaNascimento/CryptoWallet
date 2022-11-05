@@ -20,8 +20,7 @@ const Login = () => {
                         <input className='form-control' placeholder="000.000.000-00" type="text" tabIndex="4" required autoFocus />
                         <p>Senha:</p>
                         <input className='form-control' placeholder="Senha" type="text" tabIndex="5" required />
-                        <br></br>
-                        <button className='btn btn-primary form-control' name="submit" type="submit" id="contact-submit" data-submit="...Sending">Cadastrar</button>
+                        <button className='btn btn-primary form-control mt-3' name="submit" type="submit" id="contact-submit" data-submit="...Sending">Cadastrar</button>
                     </div>
                     <div className='col-6 px-5'>
                         <h1 id="text-login">Login:</h1>
@@ -29,8 +28,7 @@ const Login = () => {
                         <input className='form-control' placeholder="Endereço de e-mail" type="text" tabIndex="1" required autoFocus />
                         <p id="text-forms">Senha:</p>
                         <input className='form-control' placeholder="Senha" type="email" tabIndex="2" required />
-                        <br></br>
-                        <button className='btn btn-primary form-control' name="submit" type="submit" id="contact-submit" data-submit="...Sending">Login</button>
+                        <button className='btn btn-primary form-control mt-3' name="submit" type="submit" id="contact-submit" data-submit="...Sending">Login</button>
                     </div>
                 </div>
             </div>
