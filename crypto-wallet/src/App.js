@@ -7,7 +7,7 @@ import {
 import Home from './components/pages/Home'
 import SobreNos from './components/pages/SobreNos'
 import Login from './components/pages/Login'
-import Dashboard from './components/pages/Dashboard'
+import Dashboard from './components/pages/dashboard/Dashboard'
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
