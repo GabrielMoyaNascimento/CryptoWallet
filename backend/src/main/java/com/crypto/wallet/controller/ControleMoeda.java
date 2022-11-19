@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,11 +36,13 @@ public class ControleMoeda {
 	@Autowired
 	private ServicoMoeda servicoMoeda;
 
+	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping(value = "/moeda", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Page<Moeda>> findAll(Pageable pageable){
 		return ResponseEntity.ok(servicoMoeda.findAll(pageable));
 	}
 	
+	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping(value = "/moeda/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Moeda> findMoedaById(@PathVariable long id) {
 		try {
@@ -51,6 +54,7 @@ public class ControleMoeda {
 		}
 	}
 	
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping(value = "/moeda")
 	public ResponseEntity<Moeda> addMoeda(@RequestBody Moeda moeda) throws URISyntaxException {
 		try {
@@ -65,6 +69,7 @@ public class ControleMoeda {
 		}
 	}
 
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PutMapping(value = "/moeda/{id}")
 	public ResponseEntity<Moeda> updateUsuario(@RequestBody Moeda moeda, @PathVariable long id) {
 		try {
@@ -80,6 +85,7 @@ public class ControleMoeda {
 		}
 	}
 	
+	@CrossOrigin(origins = "http://localhost:3000")
 	@DeleteMapping(path = "/moeda/{id}")
 	public ResponseEntity<Moeda> deleteUsuarioById(@PathVariable long id) {
 		try {

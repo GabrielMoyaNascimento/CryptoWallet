@@ -49,7 +49,7 @@ const Login = () => {
       <div style={{ padding: "10%" }} className="col">
         <div style={{ padding: "0 25% 0 25%" }} className="row">
           <div className="col-6 px-5">
-            <h1>Cadastre-se:</h1>
+            <h1>Cadastro:</h1>
             <p>Nome:</p>
             <input
               name="nome"
@@ -139,7 +139,7 @@ const Login = () => {
               type="submit"
               id="contact-submit"
               data-submit="...Sending"
-                disabled={true}
+                // disabled={true}
             >
                 <a  className="text-decoration-none text-light" href="/dashboard">
                 Login

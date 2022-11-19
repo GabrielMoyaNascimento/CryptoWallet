@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,11 +36,13 @@ public class ControleCarteira {
 	@Autowired
 	private ServicoCarteira servicoCarteira;
 
+	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping(value = "/carteira", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Page<Carteira>> findAll(Pageable pageable){
 		return ResponseEntity.ok(servicoCarteira.findAll(pageable));
 	}
 	
+	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping(value = "/carteira/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Carteira> findCarteiraById(@PathVariable long id) {
 		try {
@@ -51,6 +54,7 @@ public class ControleCarteira {
 		}
 	}
 	
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping(value = "/carteira")
 	public ResponseEntity<Carteira> addCarteira(@RequestBody Carteira carteira) throws URISyntaxException {
 		try {
@@ -65,6 +69,7 @@ public class ControleCarteira {
 		}
 	}
 
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PutMapping(value = "/carteira/{id}")
 	public ResponseEntity<Carteira> updateCarteira(@RequestBody Carteira carteira, @PathVariable long id) {
 		try {
@@ -80,6 +85,7 @@ public class ControleCarteira {
 		}
 	}
 	
+	@CrossOrigin(origins = "http://localhost:3000")
 	@DeleteMapping(path = "/carteira/{id}")
 	public ResponseEntity<Carteira> deleteCarteiraById(@PathVariable long id) {
 		try {
