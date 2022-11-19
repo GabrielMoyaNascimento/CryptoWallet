@@ -11,9 +11,32 @@ const Cadastro = () => {
         <div style={{ padding: "10%" }} className="col">
           <div style={{ padding: "0 25% 0 25%" }} className="row">
             <form id="register" action="">
-              <h1>Cadastro de Carteira:</h1>
+              <h1 className="mb-3">Compra/Venda de Moedas:</h1>
+              <input
+                className="form-check-input"
+                type="checkbox"
+                id="topping"
+                name="topping"
+              />
+              Compra
+              <input
+                className="form-check-input"
+                type="checkbox"
+                id="topping"
+                name="topping"
+              />
+              Venda
+              <div className="dropdown mt-2 mb-2">
+                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Moeda
+                </button>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a className="dropdown-item">Bitcoin</a>
+                  <a className="dropdown-item">Ethereum</a>
+                </div>
+              </div>
               <fieldset>
-                <p>Nome:</p>
+                <p>Valor:</p>
                 <input
                   className="form-control"
                   placeholder="Insira o nome da carteira"
@@ -23,13 +46,7 @@ const Cadastro = () => {
                   autoFocus
                 />
               </fieldset>
-              <input
-                className="form-check-input"
-                type="checkbox"
-                id="topping"
-                name="topping"
-              />
-              Ativo
+              
               <button
                 className="btn btn-primary form-control mt-5 mb-5 "
                 name="submit"
@@ -37,21 +54,18 @@ const Cadastro = () => {
                 id="contact-submit"
                 data-submit="...Sending"
               >
-                Cadastrar
+                Salvar
               </button>
             </form>
             <hr />
-            <a  href="/carteira/Lista" style={{color: 'white', textDecoration: 'none'}}>
+            <a  href="/compraVenda/Lista" style={{color: 'white', textDecoration: 'none'}}>
             <button className="btn btn-secondary form-control mt-3 mt-5">
-            Minhas carteiras
+            Histórico de movimentações
             </button>
             </a>
           </div>
         </div>
       </section>
-      <br />
-      <br />
-
       <Footer />
     </React.Fragment>
   );

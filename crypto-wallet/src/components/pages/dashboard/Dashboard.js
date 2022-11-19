@@ -1,7 +1,6 @@
 import React from "react";
 import MenuBarLogged from "../../navigations/MenuBarLogged";
 import Footer from "../../navigations/Footer";
-import { Link } from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import Charts from "./chart/Chart";
 
@@ -30,29 +29,30 @@ const Dashboard = () => {
                 <div className="row">
                   <div className="col">
                     <li>
-                      <button className="button">
-                        <a
+                    <a
                           className="text-decoration-none text-light"
-                          href="/Dashboard"
+                          href="/compraVenda/ComprarVender"
                         >
+                      <button className="button">
                           Comprar
-                        </a>
                       </button>
+                      </a>
                     </li>
                   </div>
                   <div className="col">
                     <li>
+                    <a
+                          className="text-decoration-none text-light"
+                          href="/compraVenda/ComprarVender"
+                        >
                       <button
                         className="button"
                         style={{ backgroundColor: "#e61919" }}
                       >
-                        <a
-                          className="text-decoration-none text-light"
-                          href="/Dashboard"
-                        >
                           Vender
-                        </a>
+                        
                       </button>
+                      </a>
                     </li>
                   </div>
                 </div>
@@ -67,30 +67,31 @@ const Dashboard = () => {
                 <li className="grey">R$ 24,88 há 5 minutos</li>
                 <div className="row">
                   <div className="col">
-                    <li>
-                      <button className="button">
-                        <a
+                  <li>
+                    <a
                           className="text-decoration-none text-light"
-                          href="/Dashboard"
+                          href="/compraVenda/ComprarVender"
                         >
+                      <button className="button">
                           Comprar
-                        </a>
                       </button>
+                      </a>
                     </li>
                   </div>
                   <div className="col">
                     <li>
+                    <a
+                          className="text-decoration-none text-light"
+                          href="/compraVenda/ComprarVender"
+                        >
                       <button
                         className="button"
                         style={{ backgroundColor: "#e61919" }}
                       >
-                        <a
-                          className="text-decoration-none text-light"
-                          href="/Dashboard"
-                        >
                           Vender
-                        </a>
+                        
                       </button>
+                      </a>
                     </li>
                   </div>
                 </div>
@@ -105,30 +106,31 @@ const Dashboard = () => {
                 <li className="grey">R$ 49,20 há 5 minutos</li>
                 <div className="row">
                   <div className="col">
-                    <li>
-                      <button className="button">
-                        <a
+                  <li>
+                    <a
                           className="text-decoration-none text-light"
-                          href="/Dashboard"
+                          href="/compraVenda/ComprarVender"
                         >
+                      <button className="button">
                           Comprar
-                        </a>
                       </button>
+                      </a>
                     </li>
                   </div>
                   <div className="col">
                     <li>
+                    <a
+                          className="text-decoration-none text-light"
+                          href="/compraVenda/ComprarVender"
+                        >
                       <button
                         className="button"
                         style={{ backgroundColor: "#e61919" }}
                       >
-                        <a
-                          className="text-decoration-none text-light"
-                          href="/Dashboard"
-                        >
                           Vender
-                        </a>
+                        
                       </button>
+                      </a>
                     </li>
                   </div>
                 </div>

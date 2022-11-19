@@ -2,7 +2,6 @@ import React from 'react'
 import MenuBar from '../navigations/MenuBar'
 import Footer from '../navigations/Footer'
 import './SobreNos.css'
-import { Container } from '@material-ui/core'
 
 const SobreNos = () => {
     return (

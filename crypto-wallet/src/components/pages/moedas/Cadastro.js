@@ -1,115 +1,77 @@
 import React from "react";
-import Layout from "../../../layout/moedas/Layout";
-import SideBar from "../navigations/SideBar";
+import MenuBarLogged from "../../navigations/MenuBarLogged";
+import Footer from "../../navigations/Footer";
 
 const Cadastro = () => {
   return (
     <React.Fragment>
-      <SideBar />
+      <MenuBarLogged />
+
       <section className="content-container">
         <div style={{ padding: "10%" }} className="col">
           <div style={{ padding: "0 25% 0 25%" }} className="row">
-            <div className="col-6 px-5">
-              <form id="register" action="">
-                <h1>Cadastre-se:</h1>
-                <fieldset>
-                  <p id="text-cadastro">Nome:</p>
-                  <input
-                    placeholder="Escreva seu nome"
-                    type="text"
-                    tabIndex="1"
-                    required
-                    autoFocus
-                  />
-                </fieldset>
-                <fieldset>
-                  <p id="text-cadastro">E-mail:</p>
-                  <input
-                    placeholder="Endereço de e-mail"
-                    type="email"
-                    tabIndex="2"
-                    required
-                  />
-                </fieldset>
-                <fieldset>
-                  <p id="text-cadastro">Telefone:</p>
-                  <input
-                    placeholder="Número de telefone "
-                    type="tel"
-                    tabIndex="3"
-                    required
-                  />
-                </fieldset>
-                <fieldset>
-                  <p id="text-cadastro">CPF:</p>
-                  <input
-                    placeholder="000.000.000-00"
-                    type="text"
-                    tabIndex="4"
-                    required
-                    autoFocus
-                  />
-                </fieldset>
-                <fieldset>
-                  <p id="text-cadastro">Senha:</p>
-                  <input
-                    placeholder="Senha"
-                    type="text"
-                    tabIndex="5"
-                    required
-                  />
-                </fieldset>
-                <fieldset>
-                  <br></br>
-                  <button
-                    name="submit"
-                    type="submit"
-                    id="contact-submit"
-                    data-submit="...Sending"
-                  >
-                    Cadastrar
-                  </button>
-                </fieldset>
-              </form>
-            </div>
-            <div className="col-right">
-              <form id="login" action="">
-                <h1 id="text-login">Login:</h1>
-                <fieldset>
-                  <p id="text-forms">E-mail:</p>
-                  <input
-                    placeholder="Endereço de e-mail"
-                    type="text"
-                    tabIndex="1"
-                    required
-                    autoFocus
-                  />
-                </fieldset>
-                <fieldset>
-                  <p id="text-forms">Senha:</p>
-                  <input
-                    placeholder="Senha"
-                    type="email"
-                    tabIndex="2"
-                    required
-                  />
-                </fieldset>
-                <fieldset>
-                  <br></br>
-                  <button
-                    name="submit"
-                    type="submit"
-                    id="contact-submit"
-                    data-submit="...Sending"
-                  >
-                    Login
-                  </button>
-                </fieldset>
-              </form>
-            </div>
+            <form id="register" action="">
+              <h1>Cadastro de Moeda:</h1>
+              <fieldset>
+                <p>Nome:</p>
+                <input
+                  className="form-control"
+                  placeholder="Insira o nome da moeda"
+                  type="text"
+                  tabIndex="1"
+                  required
+                  autoFocus
+                />
+              </fieldset>
+              <fieldset className="mt-2">
+                <p>Valor:</p>
+                <input
+                  className="form-control"
+                  placeholder="Insira o valor da moeda"
+                  type="text"
+                  tabIndex="1"
+                  required
+                  autoFocus
+                />
+              </fieldset>
+              <fieldset className="mt-2">
+                <p>Alias:</p>
+                <input
+                  className="form-control"
+                  placeholder="Insira o alias da moeda"
+                  type="text"
+                  tabIndex="1"
+                  required
+                  autoFocus
+                />
+              </fieldset>
+              <input
+                className="form-check-input"
+                type="checkbox"
+                id="topping"
+                name="topping"
+              />
+              Ativa
+              <button
+                className="btn btn-primary form-control mt-5 mb-5 "
+                name="submit"
+                type="submit"
+                id="contact-submit"
+                data-submit="...Sending"
+              >
+                Cadastrar
+              </button>
+            </form>
+            <hr />
+            <a  href="/moeda/Lista" style={{color: 'white', textDecoration: 'none'}}>
+            <button className="btn btn-secondary form-control mt-3 ">
+              Todas as moedas
+            </button>
+            </a>
           </div>
         </div>
       </section>
+      <Footer />
     </React.Fragment>
   );
 };

@@ -9,35 +9,38 @@ const Lista = () => {
       <section className="content-container">
         <div style={{ padding: "10%" }} className="col">
           <div style={{ padding: "0 25% 0 25%" }} className="row">
-          <h1>Lista de Carteiras:</h1>
+          <h1>Historico de Compra/Venda:</h1>
             <table class="table mt-5 mb-5">
                 <thead>
                     <tr>
-                    <th scope="col">Número</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Ativo</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Moeda</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Data</th>
                     <th scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                    <th scope="row">1</th>
-                    <td>Bitcoin</td>
-                    <td>Sim</td>
-                    <td><a href="">Acessar</a> <a href="">Editar</a></td>
+                    <td scope="row">Compra</td>
+                    <td scope="row">Bitcoin</td>
+                    <td>R$2.500,00</td>
+                    <td>19/11/2022</td>
+                    <td><a href="">Detalhes</a></td>
                     </tr>
                     <tr>
-                    <th scope="row">2</th>
-                    <td>Etherium</td>
-                    <td>Nao</td>
-                    <td><a href="">Acessar</a> <a href="">Editar</a></td>
+                    <td scope="row">Venda</td>
+                    <td scope="row">Etherium</td>
+                    <td>R$500,00</td>
+                    <td>08/11/2022</td>
+                    <td><a href="">Detalhes</a></td>
                     </tr>
                 </tbody>
             </table>
           </div>
         </div>
       </section>
-      <br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/>
       <Footer />
     </React.Fragment>
   );

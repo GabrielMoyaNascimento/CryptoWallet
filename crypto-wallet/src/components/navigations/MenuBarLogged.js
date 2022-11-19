@@ -22,10 +22,10 @@ const MenuBar = () => {
             <a href="/carteira/Cadastro">Carteira</a>
           </li>
           <li>
-            <a href="/dashboard">Moedas</a>
+            <a href="/moeda/Cadastro">Moedas</a>
           </li>
           <li>
-            <a href="/dashboard">Perfil</a>
+            <a href="/perfil/Editar">Perfil</a>
           </li>
           <li>
             <a href="/">Sair</a>
