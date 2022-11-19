@@ -31,7 +31,7 @@ const Cadastro = () => {
               />
               Ativo
               <button
-                className="btn btn-primary form-control mt-3 "
+                className="btn btn-primary form-control mt-5 mb-5 "
                 name="submit"
                 type="submit"
                 id="contact-submit"
@@ -40,18 +40,16 @@ const Cadastro = () => {
                 Cadastrar
               </button>
             </form>
+            <hr />
+            <button className="btn btn-secondary form-control mt-3 mt-5">
+              Minhas carteiras
+            </button>
           </div>
         </div>
       </section>
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+
       <Footer />
     </React.Fragment>
   );
