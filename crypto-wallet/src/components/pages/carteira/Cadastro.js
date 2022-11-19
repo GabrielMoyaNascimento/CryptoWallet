@@ -1,7 +1,6 @@
 import React from "react";
 import MenuBarLogged from "../../navigations/MenuBarLogged";
 import Footer from "../../navigations/Footer";
-import { Checkbox } from "@material-ui/core";
 
 const Cadastro = () => {
   return (
@@ -31,10 +30,28 @@ const Cadastro = () => {
                 name="topping"
               />
               Ativo
+              <button
+                className="btn btn-primary form-control mt-3 "
+                name="submit"
+                type="submit"
+                id="contact-submit"
+                data-submit="...Sending"
+              >
+                Cadastrar
+              </button>
             </form>
           </div>
         </div>
       </section>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <Footer />
     </React.Fragment>
   );
