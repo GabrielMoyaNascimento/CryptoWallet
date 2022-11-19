@@ -3,6 +3,7 @@ import MenuBar from "../navigations/MenuBar";
 import Footer from "../navigations/Footer";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Redirect} from "react-router";
 
 const Login = () => {
 
@@ -31,18 +32,20 @@ const Login = () => {
     setUsuario({ ...usuario, [event.target.name]: event.target.value });
   }
 
-  function handleSubmit(event) {
+  function handleSubmit() {
 
     axios.post("http://localhost:8080/api/usuario", usuario).then((result) => {
       setAtualizar(result.data.console);
       //atualizar a nossa tabela
     });
+    <Redirect to="/dashboard" />
 
   }
 
   return (
     <React.Fragment>
       <MenuBar />
+      <form>
       <div style={{ padding: "10%" }} className="col">
         <div style={{ padding: "0 25% 0 25%" }} className="row">
           <div className="col-6 px-5">
@@ -54,8 +57,8 @@ const Login = () => {
               placeholder="Escreva seu nome"
               type="text"
               tabIndex="1"
-              required
               autoFocus
+              required
               onChange={handleChange}
             />
             <p>E-mail:</p>
@@ -99,7 +102,7 @@ const Login = () => {
               required
               onChange={handleChange}
             />
-            <input
+            <button
               className="btn btn-primary form-control mt-3"
               name="submit"
               type="submit"
@@ -107,7 +110,8 @@ const Login = () => {
               data-submit="...Sending"
               onClick={() => handleSubmit()}
               value="Cadastrar"
-            />
+            >Cadastrar
+              </button>
             
           </div>
           <div className="col-6 px-5">
@@ -135,14 +139,16 @@ const Login = () => {
               type="submit"
               id="contact-submit"
               data-submit="...Sending"
+                disabled={true}
             >
-              <a className="text-decoration-none text-light" href="/dashboard">
+                <a  className="text-decoration-none text-light" href="/dashboard">
                 Login
               </a>
             </button>
           </div>
         </div>
       </div>
+      </form>
       <Footer />
     </React.Fragment>
   );
