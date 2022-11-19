@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,6 +39,7 @@ public class ControleUsuario {
 	@Autowired
 	private ServicoUsuario servicoUsuario;
 
+	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping(value = "/usuario", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Page<UsuarioDTO>> findAll(
 			@RequestBody(required = false) String cpf, 
@@ -48,7 +51,7 @@ public class ControleUsuario {
 		}
 	}
 	
-	
+	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping(value = "/usuario/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Usuario> findUsuarioById(@PathVariable long id) {
 		try {
@@ -61,7 +64,9 @@ public class ControleUsuario {
 		}
 	}
 
+	
 	@PostMapping(value = "/usuario")
+	@CrossOrigin(origins = "http://localhost:3000")
 	public ResponseEntity<UsuarioDTO> addUsuario(@RequestBody Usuario usuario) throws URISyntaxException {
 		try {
 			Usuario novoUsuario = servicoUsuario.save(usuario);
@@ -75,6 +80,7 @@ public class ControleUsuario {
 		}
 	}
 
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PutMapping(value = "/usuario/{id}")
 	public ResponseEntity<Usuario> updateUsuario(@RequestBody Usuario usuario, @PathVariable long id) {
 		try {
@@ -90,6 +96,7 @@ public class ControleUsuario {
 		}
 	}
 
+	@CrossOrigin(origins = "http://localhost:3000")
 	@DeleteMapping(path = "/usuario/{id}")
 	public ResponseEntity<Void> deleteUsuarioById(@PathVariable long id) {
 		try {
