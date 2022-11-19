@@ -19,7 +19,7 @@ const MenuBar = () => {
             <a href="/dashboard">Início</a>
           </li>
           <li>
-            <a href="/dashboard">Carteira</a>
+            <a href="/carteira/Cadastro">Carteira</a>
           </li>
           <li>
             <a href="/dashboard">Moedas</a>
