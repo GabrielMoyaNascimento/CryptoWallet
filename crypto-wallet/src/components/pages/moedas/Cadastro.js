@@ -3,7 +3,6 @@ import MenuBarLogged from "../../navigations/MenuBarLogged";
 import Footer from "../../navigations/Footer";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Swal from 'sweetalert2'
 
 const Cadastro = () => {
 

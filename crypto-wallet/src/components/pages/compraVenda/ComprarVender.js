@@ -14,14 +14,14 @@ const Cadastro = () => {
               <h1 className="mb-3">Compra/Venda de Moedas:</h1>
               <input
                 className="form-check-input"
-                type="checkbox"
+                type="radio"
                 id="topping"
                 name="topping"
               />
               Compra
               <input
                 className="form-check-input"
-                type="checkbox"
+                type="radio"
                 id="topping"
                 name="topping"
               />

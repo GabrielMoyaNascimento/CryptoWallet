@@ -1,6 +1,7 @@
 import React from "react";
 import MenuBarLogged from "../../navigations/MenuBarLogged";
 import Footer from "../../navigations/Footer";
+import { InputMask } from 'primereact/inputmask';
 
 const Perfil = () => {
   return (
@@ -8,7 +9,7 @@ const Perfil = () => {
       <MenuBarLogged />
       <div style={{ padding: "10%" }} className="col">
         <div style={{ padding: "0 25% 0 25%" }} className="row">
-          <div className="col-6 px-5">
+          <div className="col-6">
             <h1>Editar Perfil:</h1>
             <form>
             <p>Nome:</p>
@@ -29,27 +30,27 @@ const Perfil = () => {
               required
             />
             <p>Telefone:</p>
-            <input
-              className="form-control"
-              placeholder="Número de telefone "
-              type="tel"
-              tabIndex="3"
-              required
-            />
+            <InputMask mask="(99) 99999-9999"
+            className="form-control"
+            placeholder="Número de telefone "
+            type="tel"
+            tabIndex="3"
+            required
+            ></InputMask>
+            
             <p>CPF:</p>
-            <input
+            <InputMask               
               className="form-control"
               placeholder="000.000.000-00"
               type="text"
               tabIndex="4"
               required
-              autoFocus
-            />
+              autoFocus mask="999.999.999-99"></InputMask>
             <p>Senha:</p>
             <input
               className="form-control"
               placeholder="Senha"
-              type="text"
+              type="password"
               tabIndex="5"
               required
             />

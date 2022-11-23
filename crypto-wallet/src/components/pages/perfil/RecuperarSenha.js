@@ -1,8 +1,11 @@
 import React from "react";
 import MenuBarLogged from "../../navigations/MenuBarLogged";
 import Footer from "../../navigations/Footer";
+import { InputMask } from 'primereact/inputmask';
+
 
 const Senha = () => {
+
   return (
     <React.Fragment>
       <MenuBarLogged />
@@ -12,8 +15,9 @@ const Senha = () => {
             <h1>Alterar Senha:</h1>
             <p>Nova Senha:</p>
             <input
+              name="password"
               className="form-control"
-              placeholder="Escreva a nova senha"
+              placeholder="Escreva a senha atual"
               type="password"
               tabIndex="1"
               required
@@ -21,13 +25,14 @@ const Senha = () => {
             />
             <p className="mt-2">Repetir Senha:</p>
             <input
+              name="confirmPassword"
               className="form-control"
               placeholder="Escreva a nova senha"
               type="password"
               tabIndex="2"
               required
             />
-            
+
             <button
               className="btn btn-primary form-control mt-3"
               name="submit"
