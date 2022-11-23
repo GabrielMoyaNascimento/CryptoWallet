@@ -32,11 +32,11 @@ const Cadastro = () => {
   }
 
   function handleSubmit() {
-    
-      axios.post("http://localhost:8080/api/moeda", moeda).then((result) => {
-        setAtualizar(result.data.console);
-        //atualizar a nossa tabela
-      });
+
+    axios.post("http://localhost:8080/api/moeda", moeda).then((result) => {
+      setAtualizar(result.data.console);
+      //atualizar a nossa tabela
+    });
   }
 
   function check() {
@@ -115,11 +115,33 @@ const Cadastro = () => {
                 </button>
               </form>
               <hr />
-              <a href="/moeda/Lista" style={{ color: 'white', textDecoration: 'none' }}>
-                <button className="btn btn-secondary form-control mt-3 ">
-                  Todas as moedas
-                </button>
-              </a>
+              <div className="row">
+                <div className="col">
+                  <h1>Lista de Moedas:</h1>
+                  <table class="table mt-5 mb-5">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col">Alias</th>
+                        <th scope="col">Ativo</th>
+                        <th scope="col">Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {moedas.map((moeda) => (
+                        <tr>
+                          <td scope="row">{moeda.nome}</td>
+                          <td>{moeda.valor}</td>
+                          <td>{moeda.alias}</td>
+                          <td>{moeda.ativo}</td>
+                          <td><a href="">Editar</a></td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </form>

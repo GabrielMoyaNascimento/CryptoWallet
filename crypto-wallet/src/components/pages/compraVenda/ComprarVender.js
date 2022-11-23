@@ -46,7 +46,7 @@ const Cadastro = () => {
                   autoFocus
                 />
               </fieldset>
-              
+
               <button
                 className="btn btn-primary form-control mt-5 mb-5 "
                 name="submit"
@@ -58,11 +58,33 @@ const Cadastro = () => {
               </button>
             </form>
             <hr />
-            <a  href="/compraVenda/Lista" style={{color: 'white', textDecoration: 'none'}}>
-            <button className="btn btn-secondary form-control mt-3 mt-5">
-            Histórico de movimentações
-            </button>
-            </a>
+            <div className="row">
+              <div className="col">
+                <h1>Historico de Compra/Venda:</h1>
+                <table class="table mt-5 mb-5">
+                  <thead>
+                    <tr>
+                      <th scope="col">Tipo</th>
+                      <th scope="col">Moeda</th>
+                      <th scope="col">Valor</th>
+                      <th scope="col">Data</th>
+                      <th scope="col">Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {/* TODO realizar listagem de compras feitas */}
+                    <tr>
+                      <td scope="row">Compra</td>
+                      <td scope="row">Bitcoin</td>
+                      <td>R$2.500,00</td>
+                      <td>19/11/2022</td>
+                      <td><a href="">Detalhes</a></td>
+                    </tr>
+                  
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </section>

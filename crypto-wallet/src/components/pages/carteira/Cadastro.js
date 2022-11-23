@@ -86,11 +86,31 @@ const Cadastro = () => {
                 </button>
               </form>
               <hr />
-              <a href="/carteira/Lista" style={{ color: 'white', textDecoration: 'none' }}>
-                <button className="btn btn-secondary form-control mt-3 mt-5">
-                  Minhas carteiras
-                </button>
-              </a>
+              <div className="row">
+                <div  className="col">
+                  <h1>Lista de Carteiras:</h1>
+                  <table class="table mt-5 mb-5">
+                    <thead>
+                      <tr>
+                        <th scope="col">Número</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Ativo</th>
+                        <th scope="col">Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {carteiras.map((carteira) => (
+                      <tr>
+                        <th scope="row">{carteira.id + 1}</th>
+                        <td>{carteira.nome}</td>
+                        <td>{carteira.ativo}</td>
+                        <td><a href="">Acessar</a> <a href="">Editar</a></td>
+                      </tr>
+                    ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </form>
