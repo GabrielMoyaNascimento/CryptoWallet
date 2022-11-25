@@ -45,9 +45,9 @@ const Login = () => {
   return (
     <React.Fragment>
       <MenuBar />
-      <form>
       <div style={{ padding: "10%" }} className="col">
         <div style={{ padding: "0 25% 0 25%" }} className="row">
+        <form>
           <div className="col-6 px-5">
             <h1>Cadastro:</h1>
             <p>Nome:</p>
@@ -97,7 +97,7 @@ const Login = () => {
               name="senha"
               className="form-control"
               placeholder="Senha"
-              type="text"
+              type="password"
               tabIndex="5"
               required
               onChange={handleChange}
@@ -112,8 +112,9 @@ const Login = () => {
               value="Cadastrar"
             >Cadastrar
               </button>
-            
-          </div>
+            </div>
+          </form>
+          <form>
           <div className="col-6 px-5">
             <h1 id="text-login">Login:</h1>
             <p id="text-forms">E-mail:</p>
@@ -146,9 +147,11 @@ const Login = () => {
               </a>
             </button>
           </div>
-        </div>
+        </form>
       </div>
-      </form>
+        
+      </div>
+      
       <Footer />
     </React.Fragment>
   );
