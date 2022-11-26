@@ -1,21 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MenuBarLogged from "../../navigations/MenuBarLogged";
 import Footer from "../../navigations/Footer";
 import axios from "axios";
-import { useEffect, useState } from "react";
 
 const Cadastro = () => {
-
   const [carteira, setCarteira] = useState({
     nome: "",
     ativo: false,
-    dataCadastro: new Date()
+    dataCadastro: new Date(),
+    usuario: 0,
   });
 
   const [carteiras, setCarteiras] = useState([]);
   const [atualizar, setAtualizar] = useState({});
 
-  let checkbox = document.getElementById('topping');
+  let checkbox = document.getElementById("topping");
 
   useEffect(() => {
     //o que será executado
@@ -30,11 +29,12 @@ const Cadastro = () => {
   }
 
   function handleSubmit() {
-
-    axios.post("http://localhost:8080/api/carteira", carteira).then((result) => {
-      setAtualizar(result.data.console);
-      //atualizar a nossa tabela
-    });
+    axios
+      .post("http://localhost:8080/api/carteira", carteira)
+      .then((result) => {
+        setAtualizar(result.data.console);
+        //atualizar a nossa tabela
+      });
   }
 
   function check() {
@@ -43,12 +43,18 @@ const Cadastro = () => {
     }
   }
 
+   function excluir(id) {
+     axios.delete("http://localhost:8080/api/venda/" + id).then((_result) => {
+       setAtualizar(id);
+     });
+   }
+
   return (
     <React.Fragment>
       <MenuBarLogged />
 
       <section className="content-container">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div style={{ padding: "10%" }} className="col">
             <div style={{ padding: "0 25% 0 25%" }} className="row">
               <form id="register" action="">
@@ -62,6 +68,7 @@ const Cadastro = () => {
                     name="nome"
                     tabIndex="1"
                     required
+                    value={carteira.nome}
                     autoFocus
                     onChange={handleChange}
                   />
@@ -71,6 +78,7 @@ const Cadastro = () => {
                   type="checkbox"
                   id="topping"
                   name="ativo"
+                  value={carteira.ativo}
                   onClick={() => check()}
                 />
                 Ativo
@@ -86,31 +94,40 @@ const Cadastro = () => {
                 </button>
               </form>
               <hr />
-              <div className="row">
-                <div  className="col">
-                  <h1>Lista de Carteiras:</h1>
-                  <table class="table mt-5 mb-5">
-                    <thead>
-                      <tr>
-                        <th scope="col">Número</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Ativo</th>
-                        <th scope="col">Ações</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    {carteiras.map((carteira) => (
-                      <tr>
-                        <th scope="row">{carteira.id + 1}</th>
-                        <td>{carteira.nome}</td>
-                        <td>{carteira.ativo}</td>
-                        <td><a href="">Acessar</a> <a href="">Editar</a></td>
-                      </tr>
-                    ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+              <h1>Lista de Carteiras:</h1>
+              <table className="table mt-5 mb-5">
+                <thead>
+                  <tr>
+                    <th scope="col">Número</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Ativo</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {carteiras.map((carteira) => (
+                    <tr>
+                      <th scope="row">{carteira.id}</th>
+                      <td>{carteira.nome}</td>
+                      <td>
+                        {carteira.ativo ? (
+                          <b className="text-primary">Sim</b>
+                        ) : (
+                          <b className="text-danger">Não</b>
+                        )}
+                      </td>
+                      <td>
+                        <button
+                          onClick={() => excluir(carteira.id)}
+                          className="btn btn-danger"
+                        >
+                          Excluir
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </form>

@@ -9,8 +9,8 @@ import com.crypto.wallet.entity.Moeda;
 
 public interface RepositorioMoeda extends JpaRepository<Moeda, Long>{
 	
-	@Query(value ="select a from Moeda a where a.id = ?1 ")
-	Page<Moeda> findById(Long id, Pageable page);
-	
-	Page<Moeda> findAll(Pageable page);
+//	@Query(value ="select a from Moeda a where a.id = ?1 ")
+//	Page<Moeda> findById(Long id, Pageable page);
+//	
+//	Page<Moeda> findAll(Pageable page);
 }

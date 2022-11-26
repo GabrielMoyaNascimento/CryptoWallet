@@ -9,9 +9,9 @@ import com.crypto.wallet.entity.Carteira;
 
 public interface RepositorioCarteira extends JpaRepository<Carteira, Long> {
 	
-	@Query(value ="select a from Carteira a where a.id =?1 ")
-	Page<Carteira> findById(Long id, Pageable page);
-	
-	Page<Carteira> findAll(Pageable page);
+//	@Query(value ="select a from Carteira a where a.id =?1 ")
+//	Page<Carteira> findById(Long id, Pageable page);
+//	
+//	Page<Carteira> findAll(Pageable page);
 
 }

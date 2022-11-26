@@ -1,8 +1,8 @@
 package com.crypto.wallet.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -28,14 +28,14 @@ public class ServicoCarteira {
 		}else return carteira;
 	}
 	
-	public Page<Carteira> findAll(Pageable pageable){
-		return repositorioCarteira.findAll(pageable);
+	public List<Carteira> findAll(){
+		return repositorioCarteira.findAll();
 	}
 	
-	public Page<Carteira> findById(Long id, Pageable page){
-		Page<Carteira> carteiras = repositorioCarteira.findById(id, page);
-		return carteiras;
-	}
+//	public Page<Carteira> findById(Long id, Pageable page){
+//		Page<Carteira> carteiras = repositorioCarteira.findById(id, page);
+//		return carteiras;
+//	}
 	
 	public Carteira save(Carteira carteira) throws BadResourceException,ResourceAlreadyExistsException{
 		if(!StringUtils.isEmpty(carteira.getNome())) {
@@ -64,13 +64,10 @@ public class ServicoCarteira {
 		
 	}
 	
-	public void deleteById(Long id) throws ResourceNotFoundException{
-		if(!existsById(id)) {
-			throw new  ResourceNotFoundException("usuario não encontrado com o id: "+id);
-		}
-		else {
-			repositorioCarteira.deleteById(id);
-		}
+	public void deleteById(Long id){
+		Carteira carteira = repositorioCarteira.findById(id).get();
+		repositorioCarteira.delete(carteira);
+		
 	}
 	
 	public Long count(){

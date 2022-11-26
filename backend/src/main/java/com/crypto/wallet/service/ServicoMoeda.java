@@ -1,9 +1,8 @@
 package com.crypto.wallet.service;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -30,14 +29,14 @@ public class ServicoMoeda {
 		}else return moeda;
 	}
 	
-	public Page<Moeda> findAll(Pageable pageable){
-		return repositorioMoeda.findAll(pageable);
+	public List<Moeda> findAll(){
+		return repositorioMoeda.findAll();
 	}
 	
-	public Page<Moeda> findById(Long id, Pageable page){
-		Page<Moeda> moedas = repositorioMoeda.findById(id, page);
-		return moedas;
-	}
+//	public Page<Moeda> findById(Long id, Pageable page){
+//		Page<Moeda> moedas = repositorioMoeda.findById(id, page);
+//		return moedas;
+//	}
 	
 	public Moeda save(Moeda moeda) throws BadResourceException,ResourceAlreadyExistsException{
 		if(!StringUtils.isEmpty(moeda.getNome())) {

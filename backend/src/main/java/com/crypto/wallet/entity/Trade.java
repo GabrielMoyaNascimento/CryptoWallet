@@ -8,5 +8,6 @@ public class Trade {
 	private Double price;
 	private Double amount;
 	private int tid;
-	private String type;
+	private String type = "compra";
+	private Double total = 100.00;
 }

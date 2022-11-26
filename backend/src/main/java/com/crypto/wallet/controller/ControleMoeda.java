@@ -2,14 +2,12 @@ package com.crypto.wallet.controller;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,22 +35,22 @@ public class ControleMoeda {
 	private ServicoMoeda servicoMoeda;
 
 	@CrossOrigin(origins = "http://localhost:3000")
-	@GetMapping(value = "/moeda", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Page<Moeda>> findAll(Pageable pageable){
-		return ResponseEntity.ok(servicoMoeda.findAll(pageable));
+	@GetMapping(value = "/moeda")
+	public List<Moeda> findAll(){
+		return servicoMoeda.findAll();
 	}
 	
-	@CrossOrigin(origins = "http://localhost:3000")
-	@GetMapping(value = "/moeda/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Moeda> findMoedaById(@PathVariable long id) {
-		try {
-			Moeda moeda = servicoMoeda.findById(id);
-			return ResponseEntity.ok(moeda);
-		} catch (ResourceNotFoundException ex) {
-			logger.error(ex.getMessage());
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, ex.getMessage(), ex);
-		}
-	}
+//	@CrossOrigin(origins = "http://localhost:3000")
+//	@GetMapping(value = "/moeda/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<Moeda> findMoedaById(@PathVariable long id) {
+//		try {
+//			Moeda moeda = servicoMoeda.findById(id);
+//			return ResponseEntity.ok(moeda);
+//		} catch (ResourceNotFoundException ex) {
+//			logger.error(ex.getMessage());
+//			throw new ResponseStatusException(HttpStatus.NOT_FOUND, ex.getMessage(), ex);
+//		}
+//	}
 	
 	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping(value = "/moeda")
@@ -87,7 +85,7 @@ public class ControleMoeda {
 	
 	@CrossOrigin(origins = "http://localhost:3000")
 	@DeleteMapping(path = "/moeda/{id}")
-	public ResponseEntity<Moeda> deleteUsuarioById(@PathVariable long id) {
+	public ResponseEntity<Moeda> deleteUsuarioById(@PathVariable("id") long id) {
 		try {
 			servicoMoeda.deleteById(id);
 			return ResponseEntity.ok().build();

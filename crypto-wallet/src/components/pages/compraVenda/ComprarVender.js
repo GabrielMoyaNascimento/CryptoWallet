@@ -12,25 +12,21 @@ const Cadastro = () => {
           <div style={{ padding: "0 25% 0 25%" }} className="row">
             <form id="register" action="">
               <h1 className="mb-3">Compra/Venda de Moedas:</h1>
-              <input
-                className="form-check-input"
-                type="radio"
-                id="topping"
-                name="topping"
-              />
-              Compra
-              <input
-                className="form-check-input"
-                type="radio"
-                id="topping"
-                name="topping"
-              />
-              Venda
               <div className="dropdown mt-2 mb-2">
-                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button
+                  className="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
                   Moeda
                 </button>
-                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div
+                  className="dropdown-menu"
+                  aria-labelledby="dropdownMenuButton"
+                >
                   <a className="dropdown-item">Bitcoin</a>
                   <a className="dropdown-item">Ethereum</a>
                 </div>
@@ -46,6 +42,24 @@ const Cadastro = () => {
                   autoFocus
                 />
               </fieldset>
+              <div className="row">
+                <div className="col">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    id="topping"
+                    name="topping"
+                  />
+                  Compra
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    id="topping"
+                    name="topping"
+                  />
+                  Venda
+                </div>
+              </div>
 
               <button
                 className="btn btn-primary form-control mt-5 mb-5 "
@@ -76,11 +90,30 @@ const Cadastro = () => {
                     <tr>
                       <td scope="row">Compra</td>
                       <td scope="row">Bitcoin</td>
-                      <td>R$2.500,00</td>
+                      <td>R$2500,00</td>
                       <td>19/11/2022</td>
-                      <td><a href="">Detalhes</a></td>
+                      <td>
+                        <a href="">Detalhes</a>
+                      </td>
                     </tr>
-                  
+                    <tr>
+                      <td scope="row">Compra</td>
+                      <td scope="row">Bitcoin</td>
+                      <td>R$25,00</td>
+                      <td>19/11/2022</td>
+                      <td>
+                        <a href="">Detalhes</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Compra</td>
+                      <td scope="row">Bitcoin</td>
+                      <td>R$500,00</td>
+                      <td>19/11/2022</td>
+                      <td>
+                        <a href="">Detalhes</a>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>

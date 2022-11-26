@@ -2,6 +2,7 @@ package com.crypto.wallet.controller;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,25 +38,32 @@ public class ControleCarteira {
 	private ServicoCarteira servicoCarteira;
 
 	@CrossOrigin(origins = "http://localhost:3000")
-	@GetMapping(value = "/carteira", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Page<Carteira>> findAll(Pageable pageable){
-		return ResponseEntity.ok(servicoCarteira.findAll(pageable));
+	@GetMapping(value = "/carteira")
+	public List<Carteira> findAll() {
+		return servicoCarteira.findAll();		
 	}
 	
-	@CrossOrigin(origins = "http://localhost:3000")
-	@GetMapping(value = "/carteira/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Carteira> findCarteiraById(@PathVariable long id) {
-		try {
-			Carteira carteira = servicoCarteira.findById(id);
-			return ResponseEntity.ok(carteira);
-		} catch (ResourceNotFoundException ex) {
-			logger.error(ex.getMessage());
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, ex.getMessage(), ex);
-		}
-	}
 	
-	@CrossOrigin(origins = "http://localhost:3000")
+//	public ResponseEntity<Page<Carteira>> findAll(Pageable pageable){
+//		return ResponseEntity.ok(servicoCarteira.findAll(pageable));
+//	}
+//	
+	
+	
+//	@GetMapping(value = "/carteira/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+//	@CrossOrigin(origins = "http://localhost:3000")
+//	public ResponseEntity<Carteira> findCarteiraById(@PathVariable long id) {
+//		try {
+//			Carteira carteira = servicoCarteira.findById(id);
+//			return ResponseEntity.ok(carteira);
+//		} catch (ResourceNotFoundException ex) {
+//			logger.error(ex.getMessage());
+//			throw new ResponseStatusException(HttpStatus.NOT_FOUND, ex.getMessage(), ex);
+//		}
+//	}
+	
 	@PostMapping(value = "/carteira")
+	@CrossOrigin(origins = "http://localhost:3000")
 	public ResponseEntity<Carteira> addCarteira(@RequestBody Carteira carteira) throws URISyntaxException {
 		try {
 			Carteira novaCarteira = servicoCarteira.save(carteira);
@@ -87,13 +95,8 @@ public class ControleCarteira {
 	
 	@CrossOrigin(origins = "http://localhost:3000")
 	@DeleteMapping(path = "/carteira/{id}")
-	public ResponseEntity<Carteira> deleteCarteiraById(@PathVariable long id) {
-		try {
+	public ResponseEntity<Carteira> deleteCarteiraById(@PathVariable("id") Long id) {
 			servicoCarteira.deleteById(id);
 			return ResponseEntity.ok().build();
-		} catch (ResourceNotFoundException ex) {
-			logger.error(ex.getMessage());
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, ex.getMessage(), ex);
-		}
 	}
 }
