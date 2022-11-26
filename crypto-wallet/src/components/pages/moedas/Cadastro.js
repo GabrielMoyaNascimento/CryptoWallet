@@ -136,7 +136,7 @@ const Cadastro = () => {
                       {moedas.map((moeda) => (
                         <tr key={moeda.id}>
                           <td scope="row">{moeda.nome}</td>
-                          <td>{moeda.valor}</td>
+                          <td>{moeda.valor.toFixed(2)}</td>
                           <td>{moeda.alias}</td>
                           <td>
                             {moeda.ativo ? (
