@@ -44,7 +44,7 @@ const Cadastro = () => {
   }
 
    function excluir(id) {
-     axios.delete("http://localhost:8080/api/venda/" + id).then((_result) => {
+     axios.delete("http://localhost:8080/api/carteira/" + id).then((_result) => {
        setAtualizar(id);
      });
    }

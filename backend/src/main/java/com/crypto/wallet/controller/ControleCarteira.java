@@ -94,7 +94,7 @@ public class ControleCarteira {
 	}
 	
 	@CrossOrigin(origins = "http://localhost:3000")
-	@DeleteMapping(path = "/carteira/{id}")
+	@DeleteMapping(value = "/carteira/{id}")
 	public ResponseEntity<Carteira> deleteCarteiraById(@PathVariable("id") Long id) {
 			servicoCarteira.deleteById(id);
 			return ResponseEntity.ok().build();

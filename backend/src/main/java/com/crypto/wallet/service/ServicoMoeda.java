@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import com.crypto.wallet.entity.Carteira;
 import com.crypto.wallet.entity.Moeda;
 import com.crypto.wallet.exception.BadResourceException;
 import com.crypto.wallet.exception.ResourceAlreadyExistsException;
@@ -65,15 +66,11 @@ public class ServicoMoeda {
 		
 	}
 	
-	public void deleteById(Long id) throws ResourceNotFoundException{
-		if(!existsById(id)) {
-			throw new  ResourceNotFoundException("usuario não encontrado com o id: "+id);
-		}
-		else {
-			repositorioMoeda.deleteById(id);
-		}
+	public void deleteById(Long id){
+		Moeda moeda = repositorioMoeda.findById(id).get();
+		repositorioMoeda.delete(moeda);
+		
 	}
-	
 	public Long count(){
 		return repositorioMoeda.count();
 	}

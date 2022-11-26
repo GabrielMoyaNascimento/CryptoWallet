@@ -44,7 +44,7 @@ const Cadastro = () => {
   }
 
    function excluir(id) {
-     axios.delete("http://localhost:8080/api/venda/" + id).then((_result) => {
+     axios.delete("http://localhost:8080/api/moeda/" + id).then((_result) => {
        setAtualizar(id);
      });
    }
@@ -129,7 +129,6 @@ const Cadastro = () => {
                         <th scope="col">Valor</th>
                         <th scope="col">Alias</th>
                         <th scope="col">Ativo</th>
-                        <th scope="col">Data Cadastro</th>
                         <th scope="col">Ações</th>
                       </tr>
                     </thead>
@@ -145,8 +144,7 @@ const Cadastro = () => {
                             ) : (
                               <b className="text-danger">Não</b>
                             )}
-                          </td>
-                          <td>{moeda.dataCadastro}</td>
+                          </td>                      
                           <td>
                             <button
                               onClick={() => excluir(moeda.id)}

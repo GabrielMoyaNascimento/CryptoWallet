@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.crypto.wallet.entity.Carteira;
 import com.crypto.wallet.entity.Moeda;
 import com.crypto.wallet.exception.BadResourceException;
 import com.crypto.wallet.exception.ResourceAlreadyExistsException;
@@ -84,14 +85,9 @@ public class ControleMoeda {
 	}
 	
 	@CrossOrigin(origins = "http://localhost:3000")
-	@DeleteMapping(path = "/moeda/{id}")
-	public ResponseEntity<Moeda> deleteUsuarioById(@PathVariable("id") long id) {
-		try {
-			servicoMoeda.deleteById(id);
-			return ResponseEntity.ok().build();
-		} catch (ResourceNotFoundException ex) {
-			logger.error(ex.getMessage());
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, ex.getMessage(), ex);
-		}
-	}
+	@DeleteMapping(value = "/moeda/{id}")
+	public ResponseEntity<Moeda> deleteCarteiraById(@PathVariable("id") Long id) {
+		servicoMoeda.deleteById(id);
+		return ResponseEntity.ok().build();
+}
 }
